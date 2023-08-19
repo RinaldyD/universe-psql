@@ -25,13 +25,13 @@ do
       INSERT_WINNER_RESULT=$($PSQL "INSERT INTO teams(name) VALUES('$WINNER')")
 
       #print inserted
-      if [[ $INSERT_WINNER_RESULT == "INSERT 0 1" ]]
-      then
-        echo Inserted winner into teams, $WINNER
-      fi
+      # if [[ $INSERT_WINNER_RESULT == "INSERT 0 1" ]]
+      # then
+      #   echo Inserted winner into teams, $WINNER
+      # fi
     fi
   
-  # get opponent_id
+    # get opponent_id
     OPPONENT_ID=$($PSQL "SELECT team_id FROM teams WHERE name='$OPPONENT'")
 
     # if not found
@@ -42,10 +42,10 @@ do
       INSERT_OPPONENT_RESULT=$($PSQL "INSERT INTO teams(name) VALUES('$OPPONENT')")
 
       #print inserted
-      if [[ $INSERT_OPPONENT_RESULT == "INSERT 0 1" ]]
-      then
-        echo Inserted winner into teams, $OPPONENT
-      fi
+      # if [[ $INSERT_OPPONENT_RESULT == "INSERT 0 1" ]]
+      # then
+      #   echo Inserted winner into teams, $OPPONENT
+      # fi
     fi
 
     # insert games
